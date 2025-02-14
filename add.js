@@ -18,8 +18,16 @@ function add(numStr) {
           }
       }
 
-      //addition of numbers and handled comma and other cases 
-      return numStr.split(delimiter).map(Number).reduce((sum, val) => sum + val, 0);
+    
+      const numStrArray = numStr.split(delimiter).map(Number);
+      const negatives = numStrArray.filter(num => num < 0);
+  
+    //   step 5 negative check
+      if (negatives.length > 0) {
+          throw new Error(`Negatives not allowed: ${negatives.join(', ')}`);
+      }
+  
+      return numStrArray.reduce((sum, val) => sum + val, 0); 
        
 }
 
