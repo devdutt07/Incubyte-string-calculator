@@ -28,6 +28,10 @@ test('should bethrows an error when negative numbers are included', () => {
 });
 
 // step 6 
-test("Ignores numbers greater than 1000", () => {
+test("should ignores numbers greater than 1000", () => {
     expect(add("2,1001")).toBe(2);
+});
+
+test("should supports custom delimiters of any length", () => {
+    expect(add("//[***]\n1***2***3")).toBe(6);
 });
