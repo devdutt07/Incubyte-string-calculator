@@ -8,10 +8,9 @@ function add(numStr) {
         return parseInt(numStr, 10);
       }
 
-      // addition for two number
-      return numStr.split(',').map(Number).reduce((sum, val) => sum + val, 0);
-
-
+      //addition of numbers and handled comma and other cases 
+      return numStr.split(/[\n,]/).map(Number).reduce((sum, val) => sum + val, 0);
+       
 }
 
 
