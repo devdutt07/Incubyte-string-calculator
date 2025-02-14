@@ -9,10 +9,10 @@ function add(numStr) {
         if (match) {
             delimiter = new RegExp(
                 match[1]
-                    .split('][') // Split multiple delimiters like [***][%%]
-                    .map(d => d.replace(/[\[\]]/g, '')) // Remove square brackets
-                    .map(d => d.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')) // Escape special regex characters
-                    .join('|') // Join them with "|"
+                    .split('][') // Splitting multiple delimiters
+                    .map(d => d.replace(/[\[\]]/g, '')) // Removing square brackets
+                    .map(d => d.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')) // Escaping regex special characters
+                    .join('|') // Joining for regex
             );
             numStr = match[2];
         }
